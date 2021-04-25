@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <head>
+    <title>Story Writer</title>
+
+    <script>
+      /* ‘name_input’ is an input tag into which the user can type 
+       * a name for the story. ‘story_editor’ is the textarea tag where 
+       * the user types their story 
+       */
+      function saveStory() {
+        var storyName = document.getElementById("name_input").value;
+        var storyHTML = document.getElementById("story_editor").value;
+        localStorage.setItem(storyName, storyHTML);
+      }
+      /* get the element who’s id is ‘name_input’. Take what you 
+       * find inside the input box on the screen, its value, and store 
+       * what you find in a variable named ‘storyName 
+       */
+      function loadStory() {
+        var storyName = document.getElementById("name_input").value;
+        var storyHTML = localStorage.getItem(storyName);
+        document.getElementById("story_editor").value = storyHTML;
+      }
+      function displayStory() {
+        var storyHTML = document.getElementById("story_editor").value;
+        document.getElementById("story_display").innerHTML = storyHTML;
+      }
+    </script>
+
+    <style>
+      textarea {
+        width: 800px;
+        height: 250px;
+        background-color: lightyellow;
+      }
+    </style>
+  </head>
+
+<body>
+  <h1>Story Editor</h1>
+  Story Name:<input id="name_input"></input>
+  <section>
+    <button onclick="loadStory()">Find and Edit It</button>
+    <button onclick="saveStory()">Save It</button>
+    <button onclick="displayStory()">Display It</button>
+  </section>
+
+
+  <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+
+  <section id="story_display"></section>
+</body>
+
+</html>
