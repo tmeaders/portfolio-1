@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 02 Week 02</title>
+</head>
+
+<body>
+    <h2>Add Two Numbers</h2>
+    <label for="numOneToAdd">Enter a number:</label>
+    <input type="number" min="1" id="numOneToAdd" name="numOneToAdd"><br>
+    <label for="numTwoToAdd">Enter a number:</label>
+    <input type="number" min="1" id="numTwoToAdd" name="numTwoToAdd"><br><br>
+    <button onclick="addTwoNumbers()">Click to Sum Up</button><br><br>
+    <div id="answerOfAdd">
+        
+    </div><br><br>
+
+    <script>
+        function addTwoNumbers() {
+            let numOneToAdd = document.getElementById("numOneToAdd").valueAsNumber;
+            let numTwoToAdd = document.getElementById("numTwoToAdd").valueAsNumber;
+            let theSumOfNum = numOneToAdd + numTwoToAdd;
+
+            document.getElementById("answerOfAdd").innerHTML 
+            = "The sum of the two numbers " + numOneToAdd + " and " + numTwoToAdd + " is " + theSumOfNum;
+        }
+    </script>
+</body>
+
+</html>

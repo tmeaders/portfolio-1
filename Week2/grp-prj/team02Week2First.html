@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 02 Week 02 First Part</title>
+</head>
+
+<body>
+    <h2>Sum of All Numbers</h2>
+    <label for="numToSum">Enter a number:</label>
+    <input type="text" id="numToSum" name="numToSum"><br>
+    <button onclick="sumUpNumbers()">Click to Sum Up</button>
+    <div id="answerOfSum">
+    </div>
+
+    <script>
+        function sumUpNumbers() {
+            let numToSum = document.getElementById("numToSum").value;
+            let theSumOfNum = 0;
+
+            for (let index = 1; index <= numToSum; index++) {
+                theSumOfNum += index;
+            }
+            document.getElementById("answerOfSum").innerHTML = "<br>The sum of all number(s) up to and including " + numToSum + " is " + theSumOfNum;
+        }
+    </script>
+</body>
+
+</html>

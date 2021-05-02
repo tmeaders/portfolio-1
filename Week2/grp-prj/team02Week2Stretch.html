@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 02 Week 02</title>
+</head>
+
+<body>
+    <h2>Simple Calculator</h2>
+    <form name="calcForm">
+        <label for="numOne">Enter the first number:</label>
+        <input type="number" min="1" id="numOne" name="numOne"><br>
+        <label for="numTwo">Enter the second number:</label>
+        <input type="number" min="1" id="numTwo" name="numTwo"><br><br>
+        <div id="answer">The answer is: </div><br><br>
+        <input type="button" value="Add" onclick="addNumbers()">
+        <input type="button" value="Subtract" onclick="subtractNumbers()">
+        <input type="button" value="Multiply" onclick="multiplyNumbers()">
+        <input type="button" value="Divide" onclick="divideNumbers()">
+        <input type="button" value="Clear" onclick="clearAll()">
+    </form>
+    <script>
+        function addNumbers() {
+            let numbers = getNumbers();
+            let numOne = numbers.numOne;
+            let numTwo = numbers.numTwo;
+            let theSumOfNum = numOne + numTwo;
+
+            document.getElementById("answer").innerHTML
+                = "The answer is: " + theSumOfNum;
+            return true;
+        }
+        const subtractNumbers = function () {
+            let numbers = getNumbers();
+            let numOne = numbers.numOne;
+            let numTwo = numbers.numTwo;
+            let theDiffOfNum = numOne - numTwo;
+
+            document.getElementById("answer").innerHTML
+                = "The answer is: " + theDiffOfNum;
+            return true;
+        }
+        const multiplyNumbers = () => {
+            let numbers = getNumbers();
+            let numOne = numbers.numOne;
+            let numTwo = numbers.numTwo;
+            let theProdOfNum = numOne * numTwo;
+
+            document.getElementById("answer").innerHTML
+                = "The answer is: " + theProdOfNum;
+            return true;
+        }
+        function divideNumbers() {
+            let numbers = getNumbers();
+            let numOne = numbers.numOne;
+            let numTwo = numbers.numTwo;
+            let theDividendOfNum = 0;
+
+            if (numTwo === 0) {
+                alert("The second number can not be zero for divide.")
+                return false;
+            }
+            theDividendOfNum = numOne / numTwo;
+            document.getElementById("answer").innerHTML
+                = "The answer is: " + theDividendOfNum;
+            return true;
+        }
+        const clearAll = function () {
+            document.forms["calcForm"]["numOne"].value = "";
+            document.forms["calcForm"]["numTwo"].value = "";
+            document.getElementById("answer").innerHTML = "The answer is: ";
+            return true;
+        }
+        const getNumbers = () => {
+            let numOne = document.forms["calcForm"]["numOne"].valueAsNumber;
+            let numTwo = document.forms["calcForm"]["numTwo"].valueAsNumber;
+            return {
+                numOne,
+                numTwo
+            }
+        }
+    </script>
+</body>
+
+</html>
