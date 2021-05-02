@@ -33,7 +33,7 @@ const game = {
 
         this.gameOver();
     },
-        /* Methods and variables */
+        /* functions and variables */
 
         ask() {
             // Ask the question
