@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Team Project Week 04</title>
+    <meta charset="utf-8">
+    <meta description="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .board {
+        width: 30em;
+        height: 30em;
+        margin: auto;
+        padding: 1em;
+      }
+      .board td,
+      .board tr {
+        width: 33.3%;
+        height: 33.3%;
+      }
+      .board td {
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        font-size: 5em;
+        text-align: center;
+      }
+      .board td:last-child {
+        border-right: 0;
+      }
+      .board tr:last-child td {
+        border-bottom: 0;
+      }
+      .X{
+          background-color: green;
+      }
+      .O {
+          background-color: orange;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div><h1>Team Project Week 04</h1></div>
+        <nav>
+            <h2><div id="winner"></div></h2>
+        </nav>
+    </header>
+    <main>
+        <button onclick="reset()">Reset</button>
+        <table class="board">
+            <tr>
+                <td id="cell"></td>
+                <td id="cell"></td>
+                <td id="cell"></td>
+            </tr>
+            <tr>
+                <td id="cell"></td>
+                <td id="cell"></td>
+                <td id="cell"></td>
+            </tr>
+            <tr>
+                <td id="cell"></td>
+                <td id="cell"></td>
+                <td id="cell"></td>
+            </tr>
+        </table>
+        <div id="x"></div>
+        <div id="o"></div>
+    </main>
+    <footer></footer>
+<script>
+    var board = [];
+    const player1 = "X";
+    const player2 = "O";
+    let turn = "X";
+    let current = "Player 1";
+    let winner;
+    let xCount = 0;
+    let oCount = 0;
+    //Allow for touch screen interaction
+    document.querySelectorAll('td').forEach(item => {item.addEventListener('touchend', play)});
+    //Allow for mouse click interaction
+    document.querySelectorAll('td').forEach(item => {item.addEventListener('click', play)});
+    console.log("Add Event");
+    //Define winning combos as an aray to match
+    const winningCombos = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    //Create both the reset and initialize function
+    function reset(){
+        turn = "X";
+        current = "Player 1"
+        winner = null;
+        document.querySelectorAll('td').forEach(item => { item.innerHTML = ""});
+        clear()
+        console.log("Reset");
+        checkWinner();      
+    }
+    function initialize(){
+        turn = "X";
+        current = "Player 1"
+        winner = null;
+        document.querySelectorAll('td').forEach(item => { item.innerHTML = ""});
+        console.log("Reset");
+        xCount=0;
+        x.innerHTML = "Current # of placements for Player 1 is: " + xCount;
+        oCount=0;
+        o.innerHTML = "Current # of placements for Player 2 is: " + xCount;
+        checkWinner(); 
+    }
+
+    //Create the event that will be used on the onclick/touchend to log the active placement of the tile
+    function play(event){
+        let square = event.target;
+        //if there is no winner allow interaction
+        if(!winner){
+            //do not allow interaction with a tile that is already filled
+            if(square.innerHTML==""){
+                //place the tile
+                square.innerHTML = turn;
+                update(square);
+                //move to the next turn in the order
+                turn = turn === 'X' ? 'O' : 'X';
+                current = current === 'Player 1' ? 'Player 2' : 'Player 1';
+            }
+        }
+        //run the getWinner function to see if there is an active winner
+        winner = getWinner();
+        //update either the active turn, or if there was a winner, or tie
+        checkWinner();
+        
+    }
+    function update(square){
+        var attr = document.createAttribute("class");
+        attr.value = turn;
+        var h = square;
+        h.setAttributeNode(attr);
+        if(turn == "X"){
+            var x = document.getElementById("x");
+            xCount++
+            x.innerHTML = "Current # of placements for "+ current + " is: " + xCount;
+        }
+        if (turn == "O"){
+            var x = document.getElementById("o");
+            oCount++
+            o.innerHTML = "Current # of placements for " + current + " is: " + xCount;
+        }
+    }
+    function clear(){
+        document.querySelectorAll('td').forEach(item => {item.classList.remove("O")});
+        document.querySelectorAll('td').forEach(item => {item.classList.remove("X")});
+        xCount=0;
+        x.innerHTML = "Current number of placements for " + current + " is: " + xCount;
+        oCount=0;
+        o.innerHTML = "Current number of placements for " + current +" is: " + xCount;
+    }
+
+    //check the board to see if the aray matches any of the winning possibilities
+    function getWinner() {
+        board = [];
+        winner = "";
+        //add each item on the board to the board array
+        document.querySelectorAll('td').forEach(item => { board.push(item.innerHTML)});
+        winningCombos.forEach(function (combo, index) {
+        if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) winner = board[combo[0]];
+        });
+        return winner ? winner : board.includes('') ? null : 'T';
+    };
+
+    //If statement to run against to see if the winner has been declared yet.
+    function checkWinner() {
+        let messages = document.getElementById('winner');
+        if (winner == "X"){
+            messages.innerHTML = "The winner is Player 1!"; 
+        }
+        if (winner == "O"){
+            messages.innerHTML = "The winner is Player 2!"; 
+        }
+        if (winner == "T") {
+            messages.innerHTML = "The match was a tie!";
+        }
+        console.log("Ran check");
+        if (winner == null) {
+            messages.innerHTML = "It's " + current + "'s Turn to play";
+        }
+    }
+    //initializing the check winner function to add the current turn when the page is loaded
+    checkWinner();
+    //initialize the td's with the onclick/touchend option and clear any tiles on loads
+    initialize();
+    
+</script>
+</body>
+</html>
