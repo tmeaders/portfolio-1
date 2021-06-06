@@ -200,3 +200,4 @@ export default class Hikes {
     alert("Add a comment function coming soon!!!");
   }
 }
+
