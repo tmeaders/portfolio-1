@@ -61,6 +61,7 @@ export default class Hikes {
     this.parentElement = document.getElementById(elementId);
     // we need a back button to return back to the list. This will build it and hide it. When we need it we just need to remove the 'hidden' class
     this.backButton = this.buildBackButton();
+    this.commentText = this.buildCommentArea();
     this.commentButton = this.buildCommentButton();
   }
   // why is this function necessary?  hikeList is not exported, and so it cannot be seen outside of this module. I added this in case I ever need the list of hikes outside of the module. This also sets me up nicely if my data were to move. I can just change this method to the new source and everything will still work if I only access the data through this getter.
@@ -93,6 +94,7 @@ export default class Hikes {
   getHikeByName(hikeName) {
     return this.getAllHikes().find(hike => hike.name === hikeName);
   }
+  
   //show a list of hikes in the parentElement
   showHikeList() {
     this.parentElement.innerHTML = "";
@@ -126,8 +128,8 @@ export default class Hikes {
     const item = document.createElement("li");
 
     item.innerHTML = ` <h2>${hike.name}</h2>
-    <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
-    <div class="description">
+    <div class="image flexboxColumn"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
+    <div class="description flexboxColumn">
       <div>
         <h3>Distance</h3>
         <p>${hike.distance}</p>
@@ -156,6 +158,9 @@ export default class Hikes {
 
     item.innerHTML = item.innerHTML + `<div> <h3>Comments</h3> ${listOfComments} </div>`;
     this.parentElement.appendChild(item);
+    this.parentElement.appendChild(this.commentText);
+    const lineBreak = document.createElement('br');
+    this.parentElement.appendChild(lineBreak);
     this.parentElement.appendChild(this.commentButton);
     this.parentElement.appendChild(this.backButton);
   }
@@ -185,6 +190,16 @@ export default class Hikes {
     return backButton;
   }
 
+  // build the comment text area
+  buildCommentArea() {
+    const commentText = document.createElement("textarea");
+    commentText.setAttribute('id', 'hikeComments');
+    commentText.setAttribute('placeholder', 'Enter hike comments');
+    commentText.setAttribute('class', 'commentBox');
+
+    return commentText;
+  }
+
   // build the comment button
   buildCommentButton() {
     const commentButton = document.createElement("button");
@@ -197,7 +212,13 @@ export default class Hikes {
 
   // !!! This needs to be developed !!!
   addComment() {
-    alert("Add a comment function coming soon!!!");
+    const hike = document.querySelector('h2').innerHTML;
+    console.log(hike);
+    const comment = document.getElementById('hikeComments').value;
+    const hikeComment = {type: 'hike', name: hike, date: new Date(), content: comment};
+    comments.push(hikeComment);
+    document.getElementById('hikeComments').value = "";
+    this.showOneHike(hike);
   }
 }
 
