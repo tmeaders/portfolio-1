@@ -10,6 +10,11 @@ body {
 	float: left;
   }
   
+  .commentBox {
+    width: 70%;
+    height: 100px;
+  }
+
   li
   {
 	  overflow: auto;
@@ -18,7 +23,6 @@ body {
   .description
   {
 	  float: center;
-	  
   }
   
 h2
@@ -41,4 +45,28 @@ button
 	width: 75vw;
 }
   
- 
+ /* Container for flexboxes */
+.flexboxRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal entries in myflexbox */
+.flexboxColumn {
+  flex: 50%;
+  padding: 10px;
+}
+
+/* Media query - on screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .flexboxColumn {
+    flex: 50%;
+  }
+}
+
+/* Media query - on screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .flexboxRow {
+    flex-direction: column;
+  }
+}
