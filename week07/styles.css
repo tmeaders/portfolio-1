@@ -1,72 +1,44 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  text-align: center;
-}
-img {
-  max-width: 20%;
-float: left;
-}
-
-.commentBox {
-  width: 70%;
-  height: 100px;
-}
-
-li
-{
-  overflow: auto;
-}
-
-.description
-{
-  float: center;
-}
-
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	  text-align: center;
+  }
+  img {
+    max-width: 20%;
+	float: left;
+  }
+  
+  li
+  {
+	  overflow: auto;
+  }
+  
+  .description
+  {
+	  float: center;
+	  
+  }
+  
 h2
 {
-font-size: 3vw;
-background-color: gray;
+	font-size: 3vw;
+	background-color: gray;
 }
 h3
 {
-font-size: 2vw;
+	font-size: 2vw;
 }
 
 h1
 {
-font-size: 5vw;
+	font-size: 5vw;
 }
 
 button
 {
-width: 75vw;
+	width: 75vw;
 }
-
-/* Container for flexboxes */
-.flexboxRow {
-display: flex;
-flex-wrap: wrap;
-}
-
-/* Create four equal entries in myflexbox */
-.flexboxColumn {
-flex: 50%;
-padding: 10px;
-}
-
-/* Media query - on screens that are 992px wide or less, go from four columns to two columns */
-@media screen and (max-width: 992px) {
-.flexboxColumn {
-  flex: 50%;
-}
-}
-
-/* Media query - on screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-.flexboxRow {
-  flex-direction: column;
-}
-}
+  
+ 
