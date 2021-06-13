@@ -1,0 +1,116 @@
+.details {
+    padding: 5%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3vh;
+    text-align: center;
+    background-color: cornsilk;
+    border-radius: 130px 130px;
+    border: 2px solid brown;
+}
+
+body {
+    background-color: cadetblue;
+
+}
+
+thead {
+    background-color: cornsilk;
+    text-align: center;
+
+}
+
+th.tableBorder {
+    border: 2px solid brown;
+    border-radius: 130px 130px;
+
+}
+
+.tableBorder {
+    border: 2px solid brown;
+    border-radius: 130px 130px;
+    background: radial-gradient(goldenrod, cornsilk, brown);
+}
+
+#characterTableBody {
+    background-color: cornsilk;
+
+    text-align: center;
+
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 10%;
+    width: 250px;
+    border-radius: 50px 50px;
+    background: linear-gradient(cornsilk, goldenrod, cornsilk);
+}
+
+span.close{
+    margin-left: 10vw;
+    
+}
+
+#btnPrior {
+    margin-top: 5vh;
+    margin-left: 30vw;
+    background-color: cornsilk;
+    border-radius: 50px 50px;
+    border: 2px solid brown;
+}
+
+#btnNext{
+    background-color: cornsilk;
+    border-radius: 50px 50px;
+    border: 2px solid brown;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    width: 100%;
+    /* Could be more or less, depending on screen size */
+    height: 100%;
+}
+
+.close {
+    font-size: 30px;
+}
+
+@media screen and (min-width: 40em){
+#characterTable{
+    max-width: 50vw;
+    height: 50vh;
+    margin-left: 30vw;
+
+}
+h1{
+    font-size: 5vh;
+    width: 56vw;
+    margin-left: 25vw;
+}
+#btnPrior {
+    margin-top: 5vh;
+    margin-left: 50vw;
+}
+span.close{
+    
+    margin-left: 3vw;
+    
+}
+thead {
+    font-size: 4vh;
+
+}
+
+}
