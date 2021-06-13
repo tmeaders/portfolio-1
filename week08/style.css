@@ -57,9 +57,9 @@ th.tableBorder {
     background: linear-gradient(cornsilk, goldenrod, cornsilk);
 }
 
-span.close{
+span.close {
     margin-left: 10vw;
-    
+
 }
 
 #btnPrior {
@@ -70,7 +70,7 @@ span.close{
     border: 2px solid brown;
 }
 
-#btnNext{
+#btnNext {
     background-color: cornsilk;
     border-radius: 50px 50px;
     border: 2px solid brown;
@@ -87,30 +87,34 @@ span.close{
     font-size: 30px;
 }
 
-@media screen and (min-width: 40em){
-#characterTable{
-    max-width: 50vw;
-    height: 50vh;
-    margin-left: 30vw;
+@media screen and (min-width: 40em) {
+    #characterTable {
+        max-width: 50vw;
+        height: 50vh;
+        margin-left: 30vw;
 
-}
-h1{
-    font-size: 5vh;
-    width: 56vw;
-    margin-left: 25vw;
-}
-#btnPrior {
-    margin-top: 5vh;
-    margin-left: 50vw;
-}
-span.close{
-    
-    margin-left: 3vw;
-    
-}
-thead {
-    font-size: 4vh;
+    }
 
-}
+    h1 {
+        font-size: 5vh;
+        width: 56vw;
+        margin-left: 25vw;
+    }
+
+    #btnPrior {
+        margin-top: 5vh;
+        margin-left: 50vw;
+    }
+
+    span.close {
+
+        margin-left: 3vw;
+
+    }
+
+    thead {
+        font-size: 4vh;
+
+    }
 
 }
