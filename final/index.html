@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Weather Site API" />
+    <title>Final | Weather Site API</title>
+
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/small.css" />
+    <link rel="stylesheet" href="css/medium.css" />
+    <link rel="stylesheet" href="css/large.css" />
+</head>
+
+<body>
+    <div id="body-content">
+        <header class="header">
+            <img class="headericon" src="" alt="" />
+            <h1>Travel Weather</h1>
+            <h2 class="motto">"Don't caught out in the weather"</h2>
+            <nav>
+                <ul class="navigation">
+                    <li><a onclick="toggleMenu()" href="#">&#9776; Menu</a></li>
+
+                </ul>
+            </nav>
+        </header>
+        <main id="main-content">
+            <h2 class="pic-head"></h2>
+            <div id="overlay">
+                <div>
+                    <picture>
+                        <source media="(max-width: 400px)" srcset="img/main-400.jpg">
+                        <source media="(max-width: 600px)" srcset="img/main-600.jpg">
+                        <source media="(min-width: 601px)" srcset="img/main-960.jpg">
+                        <img class="main-img" src="./img/main.jpg" alt="mountains" loading="lazy" />
+                    </picture>
+                </div>
+                <div id="ss-atmospheric">
+                    <h2 class="weatherhead"><u>Weather Summary</u></h2>
+                    <p>Currently: <span id="weather"></span></p>
+                    <p>Current Temp: <span id="current-temp"></span></p>
+                    <p>Wind Chill: <span id="output"></span></p>
+                    <p>Humidity: <span id="humidity"></span></p>
+                    <p>Wind Speed: <span id="speed"></span></p>
+                    </section>
+
+
+
+                </div>
+            </div>
+            <section class="forecast">
+                <!--<h3>7 Day Forecast</h3> -->
+                <table>
+                    <thead>
+                        <th colspan="7"> Seven Day Forecast</th>
+                    </thead>
+                    <tr>
+                        <th><span id="dayofweek1"></span></th>
+                        <th><span id="dayofweek2"></span></th>
+                        <th><span id="dayofweek3"></span></th>
+                        <th><span id="dayofweek4"></span></th>
+                        <th><span id="dayofweek5"></span></th>
+                        <th><span id="dayofweek6"></span></th>
+                        <th><span id="dayofweek7"></span></th>
+                    </tr>
+
+                    <tr>
+                        <td><span id="isrc1"></span> &nbsp; <img src="" alt="" id="icon1"></td>
+                        <td><span id="isrc2"></span> &nbsp; <img src="" alt="" id="icon2"></td>
+                        <td><span id="isrc3"></span> &nbsp; <img src="" alt="" id="icon3"></td>
+                        <td><span id="isrc4"></span> &nbsp; <img src="" alt="" id="icon4"></td>
+                        <td><span id="isrc5"></span> &nbsp; <img src="" alt="" id="icon5"></td>
+                        <td><span id="isrc6"></span> &nbsp; <img src="" alt="" id="icon5"></td>
+                        <td><span id="isrc7"></span> &nbsp; <img src="" alt="" id="icon5"></td>
+                    </tr>
+                    <tr>
+                        <td><span id="forecast1"></span>&#8457;</td>
+                        <td><span id="forecast2"></span>&#8457;</td>
+                        <td><span id="forecast3"></span>&#8457;</td>
+                        <td><span id="forecast4"></span>&#8457;</td>
+                        <td><span id="forecast5"></span>&#8457;</td>
+                        <td><span id="forecast6"></span>&#8457;</td>
+                        <td><span id="forecast7"></span>&#8457;</td>
+                    </tr>
+                </table>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <p class="year">
+                &copy; <span id="year"></span> | Travel Weather | Tim Meaders</p>
+            <p><a href="https://www.openweathermap.org">Weather Provided by OpenWeatherMap</a></p>
+            <p>
+                Current Date: <span id="lastupdate"></span>
+
+            </p>
+        </footer>
+
+    </div>
+    <script src="js/scripts.js"></script>
+    <script src="js/curtemp-s.js"></script>
+    <script src="js/sevenday-s.js"></script>
+    <script src="js/weatherapi.js"></script>
+</body>
+
+</html>
