@@ -1,0 +1,189 @@
+@media only screen and (min-width: 32.5em) {
+
+/******************** All of my the top of my webpage or header css will go below ********************/
+
+/* 35em is also 560px when basefont is 16px */
+
+header {
+    display: grid;
+    grid-template-columns: 6fr;
+    grid-template-rows: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    color: white;
+    width: 61.75em;
+    height: 11em;
+    padding-bottom: 1em;
+    border-radius: 10px 10px;
+}
+
+.headericon {
+    float: left;
+    height: 8em;
+    margin-left: 11em;
+    margin-top: .5em;
+}
+
+header h1 {
+    font-size: 2em;
+    
+    line-height: 1px;
+    font-family: 'Carter One', cursive;
+    color: white;
+    display: block;
+    margin-top: -3.5em;
+    margin-left: -.25em;
+
+}
+
+header h2 {
+    font-size: 4em;
+    text-align: center;
+    line-height: 1px;
+    font-family: 'Lato', cursive;
+    color: white;
+    padding-bottom: 1em;
+    ;
+}
+
+h2{
+margin:0;
+text-align: center;
+font-size: 2em;
+
+}
+
+.motto {
+    font-size: 1.75em;
+    margin: 0;
+    margin-top: -.75em;
+   
+}
+
+nav {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 10em;
+}
+
+
+.navigation {
+    display: flex;
+    margin-left: 4em;
+
+}
+
+.navigation li {
+    display: block;
+    flex: 1 1 auto;
+    font-size: 1.5em;
+}
+
+.navigation li:first-child {
+    display: none;
+}
+
+.navigation li a {
+    display: block;
+    font-size: 2em;
+    border: solid;
+    border-color: cornsilk;
+  }
+
+.navigation li a:hover {
+    color: black;
+    background:whitesmoke;
+}
+
+nav ul li a.active{
+    color: black;
+    background-color: goldenrod;
+    
+}   
+
+
+    h1 {
+		font-size: 2.2em;
+	}
+    
+  
+
+   
+   
+	
+
+
+
+    /* ****************************** this area is for images *************************************************** */
+    .lazyload {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.5em;
+    }
+    
+    .lazyload h2:nth-child(1) {
+		grid-column: 1 / span 2;
+    }
+
+    /******************** All of my the middle of my webpage or main css will go below *******************/
+    
+
+    /*------------------------------ Contacts-----------------------------*/
+  
+#d-elements{
+    margin-top: 6em;
+    margin-bottom: 0;
+    height: 25em;
+}
+
+#contacts-container {
+    display: inline-block;
+    line-height: 1em;
+    background: cadetblue;
+}
+
+.smedia {
+    padding: .5em;
+    width: 3em;
+    height: 3em;
+}
+
+#s-elements .preston-map {
+    float: right;
+    width: 40em;
+    height: 20em;
+    margin: 0;
+    padding-bottom: 1em;
+    padding-left: 12em;
+}
+
+
+
+#s-elements {
+    padding: 1em;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#s-elements .info {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+}
+
+#s-elements p {
+    padding-left: 1em;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25em;
+
+}
+
+    /******************** All of my the bottom of my webpage or footer css will go below *****************/
+
+    footer{
+        font-size: 1.5em;
+       padding-bottom: 5em;
+       
+    }
+
+    /*end medium */
+}
