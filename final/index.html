@@ -23,12 +23,22 @@
             <img class="headericon" src="" alt="" />
             <h1>Travel Weather</h1>
             <h2 class="motto">"Don't get caught out in the weather"</h2>
-            <nav>
-                <ul class="navigation">
-                    <li><a onclick="toggleMenu()" href="#">&#9776; Menu</a></li>
-
-                </ul>
-            </nav>
+            <section class="top-banner">
+                <div class="container">
+                  <form>
+                    <input type="text" class="city-name" placeholder="Search for a city" autofocus>
+                    <button type="submit">SUBMIT</button>
+                    <span class="msg"></span>
+                  </form>
+                </div>
+              </section>
+              <section class="ajax-section">
+                <div class="container">
+                  <ul class="cities"></ul>
+                </div>
+              </section>
+            
+              
         </header>
         <main id="main-content">
             <h2 class="pic-head"></h2>
@@ -101,6 +111,7 @@
 
     </div>
     <script src="js/scripts.js"></script>
+    <script src="js/city.js"></script>
     <script src="js/curtemp-s.js"></script>
     <script src="js/sevenday-s.js"></script>
     <script src="js/weatherapi.js"></script>

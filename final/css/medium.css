@@ -48,6 +48,10 @@
         margin-left: -2.5em;
     }
     
+    .city-name{
+        margin-left: 2vw;
+        margin-bottom: 2vh;
+      }
 
     .navigation {
         display: flex;

@@ -1,4 +1,4 @@
-const sevendayURL ="https://api.openweathermap.org/data/2.5/onecall?lat=40.45302953104331&lon=-111.89674448805302&exclude=hourly&units=imperial&appid=466dca7cca93940a33882268fd25bd99";
+const sevendayURL ="https://api.openweathermap.org/data/2.5/weather?q={city name}&units=imperial&appid=466dca7cca93940a33882268fd25bd99";
 fetch(sevendayURL)
   .then((response) => response.json())
   .then((jsObject) => {
